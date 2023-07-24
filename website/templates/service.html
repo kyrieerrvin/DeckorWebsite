@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Services  | Deckor Incorporated{%endblock %}
+{% block meta_description %}We Construct. We Design. We Deliver.{% endblock %}
+
+{% block content %}
+
+
+
+  <!-- ***** Breadcrumb Area Start ***** -->
+  <div class="breadcumb-area bg-img bg-gradient-overlay" style="background-image: url(img/bg-img/12.jpg);">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-12">
+          <h2 class="title">Services</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="breadcumb--con">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href='home.html'><i class="fa fa-home"></i>Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Services</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Breadcrumb Area End ***** -->
+
+  <!-- ***** Services Area Start ***** -->
+  <section class="dento-services-area mt-50 mb-50">
+    <div class="container">
+      <div class="row">
+
+        <!-- Single Service Area -->
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="single-service--area text-center mb-50">
+            <div class="icon--">
+              <img src="{% static 'website/img/core-img/house-plan.png' %}" alt="">
+            </div>
+            <h5>Architectural Design</h5>
+            <p>Where dreams come true and creativity meets reality, elevate rooms with artistic accuracy.</p>
+          </div>
+        </div>
+        .
+        <!-- Single Service Area -->
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="single-service--area text-center mb-50">
+            <div class="icon--">
+              <img src="{% static 'website/img/core-img/building.png' %}" alt="">
+            </div>
+            <h5>Construction</h5>
+            <p>Creating the future with quality and craftsmanship, erecting excellence from the ground up.</p>
+          </div>
+        </div>
+
+        <!-- Single Service Area -->
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="single-service--area text-center mb-50">
+            <div class="icon--">
+              <img src="{% static 'website/img/core-img/staircase-colored.png' %}" alt="">
+            </div>
+            <h5>Interior Design</h5>
+            <p>Envision, Enrich, Elevate - Crafting spaces that resonate with soulful elegance and transformative beauty.</p>
+          </div>
+        </div>
+.
+        <!-- Single Service Area -->
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="single-service--area text-center mb-50">
+            <div class="icon--">
+              <img src="{% static 'website/img/core-img/office.png' %}" alt="">
+            </div>
+            <h5>Office Fit-outs</h5>
+            <p>Customized solutions for inspiring workplaces – releasing the full potential of your work environment.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- ***** Services Area End ***** -->
+
+{% endblock %}
