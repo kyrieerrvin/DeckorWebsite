@@ -43,17 +43,17 @@ def appointment(request):
 		your_email = request.POST['your-email']
 		your_address = request.POST['your-address']
 		your_schedule = request.POST['your-schedule']
-		your_date = request.POST['your-date']
+		your_service = request.POST['your-service']
 		your_message = request.POST['your-message']
 		
 		# send an email
-		appointment = "Name: " + your_name + " Phone: " + your_phone + " Email: " + your_email + " Address: " + your_address + " Schedule: " + your_schedule + " Day: " + your_date + " Message: " + your_message
+		appointment = "Name: " + your_name + " \nPhone: " + your_phone + " \nEmail: " + your_email + " \nAddress: " + your_address + " \nService: " + your_service + " \nSchedule: " + your_schedule + " \nMessage: " + your_message
 
 		send_mail(
 			'Appointment Request', # subject
 			appointment, # message
 			your_email, # from email
-			['john@codemy.com'], # To Email
+			[your_email, 'aethernether99@gmail.com'], # To Email
 			)
 		
 		return render(request, 'appointment.html', {
@@ -62,7 +62,6 @@ def appointment(request):
 			'your_email': your_email,
 			'your_address': your_address,
 			'your_schedule': your_schedule,
-			'your_date': your_date,
 			'your_message': your_message
 			})
 
