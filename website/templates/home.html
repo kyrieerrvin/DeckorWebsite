@@ -127,7 +127,7 @@
   </section>
   <!-- Cool Facts Area End -->
 
-  <!-- Dento Service Area Start -->
+  <!-- Services Area Start -->
   <section class="dento-service-area section-padding-100-0 bg-img bg-gradient-overlay jarallax clearfix" style="background-image: url('{% static 'website/img/bg-img/13.jpg' %}');">
     <div class="container">
       <div class="row align-items-center">
@@ -179,7 +179,7 @@
           </div>
         </div>
 
-        <!-- Video Area -->
+        <!-- Pic Area -->
         <div class="col-12 col-lg-6">
           <div class="dento-video-area mb-100">
             <img src="{% static 'website/img/bg-img/interior.jpg' %}" alt="" width="560" height="380">
@@ -188,10 +188,10 @@
       </div>
     </div>
   </section>
-  <!-- Dento Service Area End -->
+  <!-- Services Area End -->
 
 
-    <!-- ***** Dento deckor Area Start ***** -->
+    <!-- ***** Deckor Area Start ***** -->
     <section class="deckor-area section-padding-100-0">
       <div class="container">
         <div class="row">
@@ -280,7 +280,7 @@
         </div>
       </div>
     </section>
-    <!-- ***** Dento deckor Area End ***** -->
+    <!-- ***** Deckor Area End ***** -->
 
   <!-- Book An Oppointment Area Start -->
   <section class="book-an-oppointment-area section-padding-100 bg-img bg-gradient-overlay jarallax clearfix" style="background-image: url('{% static 'website/img/bg-img/12.jpg' %}');" id="bottom">
@@ -335,19 +335,12 @@
                 </div>
                 <div class="col-md-6">
                   <div class="form-group mb-30">
-                    <select name="your-service" class="form-control">
-                      <option value="Choose Your Service">Choose Your Service</option>
-                      <option value="Architectural Design">Architectural Design</option>
-                      <option value="Construction">Construction</option>
-                      <option value="Interior Design">Interior Design</option>
-                      <option value="Office Fitouts">Office Fitouts</option>
-                      <option value="Other">Other</option>
-                    </select>
+                    <input type="date" name="your-date" class="form-control datepicker" placeholder="Select a Date" required min = "{% now 'Y-m-d' %}">
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="form-group mb-30">
-                    <textarea name="your-message" class="form-control" placeholder="Indicate the date you wish to hold the appointment: (month, day, year). Put any additional messages."></textarea>
+                    <textarea name="your-message" class="form-control" placeholder="Put any additional messages - service requested, etc."></textarea>
                   </div>
                 </div>
                 <div class="col-12 text-center">

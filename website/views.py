@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.core.mail import send_mail
 from django.conf import settings
+from datetime import datetime
 
 def home(request):
 	return render(request, 'home.html', {})
@@ -26,9 +27,6 @@ def contact(request):
 		return render(request, 'contact.html', {})
 
 
-def about(request):
-	return render(request, 'about.html', {})
-
 def portfolio(request):
 	return render(request, 'portfolio.html', {})
 
@@ -43,11 +41,14 @@ def appointment(request):
 		your_email = request.POST['your-email']
 		your_address = request.POST['your-address']
 		your_schedule = request.POST['your-schedule']
-		your_service = request.POST['your-service']
 		your_message = request.POST['your-message']
+		selected_date = request.POST['your-date']
+
+		date_obj = datetime.strptime(selected_date, '%Y-%m-%d')
+		formatted_date = date_obj.strftime('%B %d, %Y')
 		
 		# send an email
-		appointment = "Name: " + your_name + " \nPhone: " + your_phone + " \nEmail: " + your_email + " \nAddress: " + your_address + " \nService: " + your_service + " \nSchedule: " + your_schedule + " \nMessage: " + your_message
+		appointment = "Name: " + your_name + " \nPhone: " + your_phone + " \nEmail: " + your_email + " \nAddress: " + your_address + " \n\nSchedule: " + your_schedule + " \nAppointment date: " + formatted_date + " \nMessage: " + your_message
 
 		send_mail(
 			'Appointment Request', # subject
@@ -62,8 +63,11 @@ def appointment(request):
 			'your_email': your_email,
 			'your_address': your_address,
 			'your_schedule': your_schedule,
-			'your_message': your_message
+			'your_message': your_message,
+			'formatted_date' : formatted_date
 			})
+
+
 
 	else:
 		return render(request, 'home.html', {})

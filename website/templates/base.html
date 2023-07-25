@@ -17,9 +17,43 @@
   <!-- Core Stylesheet -->
   <link rel="stylesheet" href="{% static 'website/css/style.css' %}">
 
+  <link rel="stylesheet" href="{% static 'bootstrap-datepicker/css/bootstrap-datepicker3.min.css' %}">
+  <script src="{% static 'bootstrap-datepicker/js/bootstrap-datepicker.min.js' %}"></script>
+
 </head>
 
 <body>
+  <!-- Messenger Chat Plugin Code -->
+  <div id="fb-root"></div>
+
+  <!-- Your Chat Plugin code -->
+  <div id="fb-customer-chat" class="fb-customerchat">
+  </div>
+
+  <script>
+    var chatbox = document.getElementById('fb-customer-chat');
+    chatbox.setAttribute("page_id", "101124578920782");
+    chatbox.setAttribute("attribution", "biz_inbox");
+  </script>
+
+  <!-- Your SDK code -->
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        xfbml            : true,
+        version          : 'v17.0'
+      });
+    };
+
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+
   <!-- Preloader -->
   <div id="preloader">
     <div class="preload-content">
@@ -77,7 +111,6 @@
               <div class="classynav">
                 <ul id="nav">
                   <li><a href="{% url 'home' %}">Home</a></li>
-                  <!-- <li><a href="{% url 'about' %}">About</a></li> -->
                   <li><a href="{% url 'service' %}">Services</a></li>
                   <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
                   <li><a href="./contact.html">Contact</a></li>
@@ -147,6 +180,16 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
   <script src="{% static 'website/js/dento.bundle.js' %}"></script>
   <!-- Active js -->
   <script src="{% static 'website/js/default-assets/active.js' %}"></script>
+
+  <script>
+    $(document).ready(function() {
+      $('.datepicker').datepicker({
+        format: 'yyyy-mm-dd',
+        autoclose: true,
+        todayHighlight: true
+      });
+    });
+  </script>
 
 </body>
 
